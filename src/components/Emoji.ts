@@ -36,10 +36,12 @@ export class Emoji extends Container {
     if (nextEmoji !== null) {
       if (this.emojiConnector === null) {
         this.emojiConnector = new EmojiConnector(this)
-
-        app.stage.addChild(this.emojiConnector)
       }
 
+      app.stage.addChildAt(
+        this.emojiConnector,
+        app.stage.children.indexOf(nextEmoji)
+      )
       this.emojiConnector.draw(nextEmoji)
     }
   }
@@ -92,6 +94,8 @@ export class Emoji extends Container {
 
       if (this.emojiConnector !== null && this.nextEmoji !== null)
         this.emojiConnector.draw(this.nextEmoji)
+
+      app.render()
     }
   }
 }

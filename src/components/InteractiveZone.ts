@@ -38,6 +38,8 @@ export class InteractiveZone extends Sprite {
         nextEmoji.previousEmoji = emoji
       }
     }
+
+    app.render()
   }
 
   private onResize() {

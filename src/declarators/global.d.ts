@@ -1,6 +1,8 @@
-import { Application } from 'pixi.js'
+import { Container, Renderer } from 'pixi.js'
 
 declare global {
-  //eslint-disable-next-line no-var
-  var __PIXI_APP__: Application
+  /*eslint-disable no-var*/
+  var __PIXI_RENDERER__: Renderer
+  var __PIXI_STAGE__: Container
+  /*eslint-enable no-var*/
 }
